@@ -1,6 +1,7 @@
 {
-  "name": "birbo-react",
+  "name": "birbo-birbsandjournals-web",
   "version": "0.1.0",
+  "description": "Pagina web informativa y enfocada a la venta de libretas 100% artesanales y hechas a mano con diseños Inspirados en la belleza y singularidad de las aves",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
