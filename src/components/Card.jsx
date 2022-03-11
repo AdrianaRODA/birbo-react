@@ -1,12 +1,32 @@
-import React from 'react'
+import React from "react";
 
-const Card = (props) => {
-    console.log()
-    return (
-        <div>
+import ItemCount from "./ItemCount";
+
+const Card = () => {
+
+  const onAdd = () => {
+    console.log("Se ha agregado al carrito");
+  };
+
+  return (
+    <div className="commerce">
+      <div className="box-container">
+        <div className="box">
+          <div className="image">
+            <img src="" alt="" />
+          </div>
+
+          <div className="info">
+            <h3>Nombre del producto</h3>
+            <h4>$xx.xx mxn </h4>
+
+            <ItemCount stock={7} initial={1} onAdd={onAdd} />
             
+          </div>
         </div>
-    )
-}
+      </div>
+    </div>
+  );
+};
 
-export default Card
+export default Card;

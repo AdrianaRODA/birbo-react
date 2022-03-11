@@ -1,11 +1,158 @@
+/* ITEM COUNTER */
 .contador {
-    display: inline-flex;
-    justify-content: space-between;
-    margin: 0 1rem;
-    text-align: center;
-    font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  justify-items: center;
+  align-items: center;
+  margin: 1rem;
+  text-align: center;
+  font-size: 1rem;
+  background-color: #dedede;
+  border-radius: .2rem;
 }
 
 .countNumber {
-    margin: 0 1rem;
+  margin: 0 2rem;
+}
+
+/* PRODUCT CARD */
+
+@media only screen and (max-width: 768px) {
+.bn11 {
+    background-color: white;
+    color: black;
+  }
+}
+
+.btn11 {
+    display: inline-block;
+    padding: 0.5em 1.7em;
+    margin: 0 0.1em 0.1em 0;
+    border: 0.16em solid rgba(255, 255, 255, 0);
+    background-color: black;
+    border-radius: 2em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-weight: 300;
+    color: #ffffff;
+    text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
+    text-align: center;
+    transition: all 0.2s;
+}
+
+.btn11:hover {
+    border-color: #ff6666;
+}
+
+.botonAgregar{
+  display: flex;
+  justify-content: center;
+}
+
+.commerce {
+  margin: auto;
+
+}
+.commerce h2 {
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  background-color: #ff6666;
+}
+.commerce .box-container {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0 0.5rem;
+  width: 85%;
+  margin: 0 auto;
+}
+@media only screen and (max-width: 768px) {
+  .commerce .box-container {
+    padding: 0;
+  }
+}
+.commerce .box-container .box {
+  /*border: 0.1rem solid rgba(0, 0, 0, 0.3);*/
+  overflow: hidden;
+  position: relative;
+  margin: 1rem 2rem;
+}
+.commerce .box-container .box .info h4 {
+  text-align: center;
+  margin-bottom: 0;
+}
+.commerce .box-container .box .info h3 {
+  padding: 0.5rem;
+  margin-bottom: 0;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ff6666;
+}
+.commerce .box-container .box .info .subInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /*padding: 1rem;*/
+  /*border-top: 0.1rem solid rgba(0, 0, 0, 0.3);*/
+}
+.commerce .box-container .box .info .subInfo .price {
+  color: #ff3300;
+  font-size: 1rem;
+  text-align: center;
+}
+.commerce .box-container .box .info .subInfo .price span {
+  color: #666;
+  font-size: 0.8rem;
+  text-decoration: line-through;
+}
+.commerce .box-container .box .info .subInfo .stars i {
+  color: orange;
+  font-size: 1rem;
+}
+.commerce .box-container .box .image {
+  height: 20rem;
+  width: 20rem;
+  align-items: center;
+  justify-self: center;
+  padding: 0;
+  margin: auto;
+  text-align: center;
+  background: #f0f0f0;
+}
+.commerce .box-container .box .image img {
+  height: 100%;
+  object-fit: cover;
+}
+.commerce .box-container .box .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20rem;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0);
+}
+.commerce .box-container .box .overlay a {
+  font-size: 1.5rem;
+  padding: 1rem 1.5rem;
+  background: #fff;
+  color: #666;
+  margin: 1rem;
+  transform: translateY(-15rem);
+  transition-delay: calc(0.1s);
+}
+.commerce .box-container .box:hover .overlay {
+  transform: scale(1);
+}
+.commerce .box-container .box:hover .overlay a {
+  transform: translateY(0rem);
+}
+.commerce .box-container .box:hover .overlay a:hover {
+  color: #ff6666;
 }

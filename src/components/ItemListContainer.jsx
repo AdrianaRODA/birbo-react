@@ -1,11 +1,12 @@
 import React from 'react'
-import ItemCount from './ItemCount'
+import Card from './Card'
+
 
 const ItemListContainer = (props) => {
     return (
         <div>
             <h1>{props.bienvenida}</h1>
-            <ItemCount />
+            <Card />
         </div>
     )
 }
