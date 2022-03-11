@@ -1,1 +1,11 @@
+.contador {
+    display: inline-flex;
+    justify-content: space-between;
+    margin: 0 1rem;
+    text-align: center;
+    font-size: 1.5rem;
+}
 
+.countNumber {
+    margin: 0 1rem;
+}

@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <NavBar />
-      <ItemListContainer />
+      <ItemListContainer bienvenida="Hola bienvenido a Birbo Birbs y Journals" />
     </>
   );
 }
