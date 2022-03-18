@@ -13,7 +13,7 @@ const Card = () => {
       <div className="box-container">
         <div className="box">
           <div className="image">
-            <img src="" alt="" />
+            <img src={img} alt="" />
           </div>
 
           <div className="info">

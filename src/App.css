@@ -1,4 +1,10 @@
+h1 {
+  font-size: medium;
+  margin: 2rem 0;
+}
+
 /* ITEM COUNTER */
+
 .contador {
   display: flex;
   justify-content: space-between;
@@ -50,7 +56,7 @@
 }
 
 .commerce {
-  margin: auto;
+  display: inline-flex;
 
 }
 .commerce h2 {
@@ -65,7 +71,6 @@
   justify-content: center;
   flex-wrap: wrap;
   padding: 0 0.5rem;
-  width: 85%;
   margin: 0 auto;
 }
 @media only screen and (max-width: 768px) {
@@ -125,6 +130,7 @@
 .commerce .box-container .box .image img {
   height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 .commerce .box-container .box .overlay {
   position: absolute;
@@ -155,4 +161,13 @@
 }
 .commerce .box-container .box:hover .overlay a:hover {
   color: #ff6666;
+}
+
+.detailsBox{
+  margin: 1rem 0;
+  display: inline-flex;
+}
+
+.detailsBox .details{
+  margin: 0 30% 0 5%;
 }
