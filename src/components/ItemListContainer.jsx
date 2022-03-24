@@ -3,29 +3,37 @@ import ItemList from "./ItemList";
 
 const ItemListContainer = (props) => {
   const [arrayItems, setArrayItems] = useState([]);
+
+  useEffect(() => {
+
   const products = [
     {
-      stock: "7",
+      id: 1,
+      stock: 7,
       linea: "friends",
       nombre: "Libreta -Pink collage-",
-      precio: "200",
+      precio: 200,
       img: "img/0.jpg",
     },
     {
-      stock: "6",
+      id: 2,
+      stock: 6,
       linea: "lux",
       nombre: "Journal -Estampa-",
-      precio: "400",
+      precio: 400,
       img: "img/6.jpg",
     },
     {
-      stock: "3",
+      id: 3,
+      stock: 3,
       linea: "friends",
       nombre: "Libreta -Tropical-",
-      precio: "200",
+      precio: 200,
       img: "img/3.jpg",
     },
   ];
+
+  
 
   const imprimirProductos = () => {
     return new Promise((resolve, reject) => {
@@ -39,7 +47,7 @@ const ItemListContainer = (props) => {
     });
   };
 
-  useEffect(() => {
+  //useEffect(() => {
     imprimirProductos()
       .then((respuesta) => setArrayItems(respuesta))
       .catch((error) => console.error(error));

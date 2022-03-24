@@ -1,10 +1,11 @@
-import React from 'react'
-import ItemCount from './ItemCount'
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 
-function Item({stock,linea,nombre, precio, img}) {
-    const onAdd = () => {
-        console.log("Se ha agregado al carrito");
-      };
+function Item({ linea, nombre, precio, img }) {
+  const onAdd = () => {
+    console.log("Se ha agregado al carrito");
+  };
   return (
     <div className="commerce">
       <div className="box-container">
@@ -18,14 +19,17 @@ function Item({stock,linea,nombre, precio, img}) {
             <h4>${precio} mxn </h4>
             <h4>{linea}</h4>
 
-            <ItemCount stock={stock} initial={1} onAdd={onAdd} />
-            
+            <div className="botonAgregar">
+              <button className="btn11" onClick={onAdd}>
+                <FontAwesomeIcon icon={faCartPlus}></FontAwesomeIcon> Agregar al
+                carrito
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Item
-
+export default Item;
