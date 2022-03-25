@@ -1,62 +1,58 @@
 import React, { useEffect, useState } from "react";
 import ItemList from "./ItemList";
+import { useParams } from "react-router-dom";
 
 const ItemListContainer = (props) => {
-  const [arrayItems, setArrayItems] = useState([]);
+  const { category } = useParams();
+  console.log(category);
+
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
-
-  const products = [
-    {
-      id: 1,
-      stock: 7,
-      linea: "friends",
-      nombre: "Libreta -Pink collage-",
-      precio: 200,
-      img: "img/0.jpg",
-    },
-    {
-      id: 2,
-      stock: 6,
-      linea: "lux",
-      nombre: "Journal -Estampa-",
-      precio: 400,
-      img: "img/6.jpg",
-    },
-    {
-      id: 3,
-      stock: 3,
-      linea: "friends",
-      nombre: "Libreta -Tropical-",
-      precio: 200,
-      img: "img/3.jpg",
-    },
-  ];
-
-  
-
-  const imprimirProductos = () => {
-    return new Promise((resolve, reject) => {
+    const imprimirProductos = new Promise((resolve, reject) => {
       setTimeout(() => {
-        if (products.length === 0) {
-          reject("no hay productos disponibles");
-        } else {
-          resolve(products);
-        }
+        resolve([
+          {
+            id: 1,
+            stock: 7,
+            linea: "friends",
+            nombre: "Libreta -Pink collage-",
+            precio: 200,
+            img: "https://i.ibb.co/26VQnc2/image.jpg",
+          },
+          {
+            id: 2,
+            stock: 6,
+            linea: "lux",
+            nombre: "Journal -Estampa-",
+            precio: 400,
+            img: "https://i.ibb.co/c35SpCX/6.jpg",
+          },
+          {
+            id: 3,
+            stock: 3,
+            linea: "friends",
+            nombre: "Libreta -Tropical-",
+            precio: 200,
+            img: "https://i.ibb.co/BK1kDFn/3.jpg",
+          },
+        ]);
       }, 3000);
     });
-  };
 
-  //useEffect(() => {
-    imprimirProductos()
-      .then((respuesta) => setArrayItems(respuesta))
-      .catch((error) => console.error(error));
-  }, []);
+    if (!category) {
+      imprimirProductos.then((res) => setProducts(res));
+    } else {
+      imprimirProductos.then((res) => {
+        setProducts(res.filter((prod) => prod.linea === category));
+      });
+    }
+  }, [category]);
 
   return (
     <div>
       <h1>{props.bienvenida}</h1>
-      <ItemList lista={arrayItems} />
+      <ItemList lista={products} />
     </div>
   );
 };

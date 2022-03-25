@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMinusCircle, faPlusCircle, faCartPlus } from "@fortawesome/free-solid-svg-icons";
+import {
+  faMinusCircle,
+  faPlusCircle,
+  faCartPlus,
+} from "@fortawesome/free-solid-svg-icons";
 
-const ItemCount = ({ stock, initial, onAdd }) => {
+const ItemCount = ({stock, nombre, precio, initial}) => {
   const [count, setCount] = useState(initial);
 
   const sumar = () => {
@@ -16,6 +20,12 @@ const ItemCount = ({ stock, initial, onAdd }) => {
     if (count > 1) {
       setCount(count - 1);
     }
+  };
+
+  const onAdd = () => {
+    console.log(
+      `Se ha agregado con exito ${count} ${nombre} con un valor de $${precio}`
+    );
   };
 
   return (

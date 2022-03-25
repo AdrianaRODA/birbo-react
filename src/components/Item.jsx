@@ -1,8 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 
-function Item({ linea, nombre, precio, img }) {
+function Item({ id, linea, nombre, precio, img }) {
   const onAdd = () => {
     console.log("Se ha agregado al carrito");
   };
@@ -11,7 +13,9 @@ function Item({ linea, nombre, precio, img }) {
       <div className="box-container">
         <div className="box">
           <div className="image">
-            <img src={img} alt="" />
+            <Link to={`/item/${id}`}>
+              <img src={img} alt="" />
+            </Link>
           </div>
 
           <div className="info">
