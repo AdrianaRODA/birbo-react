@@ -1,15 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
 import { Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faMinusCircle,
   faPlusCircle,
-  faCartPlus,
 } from "@fortawesome/free-solid-svg-icons";
 
-const ItemCount = ({stock, nombre, precio, initial}) => {
-  const [count, setCount] = useState(initial);
+const ItemCount = ({max, min= 1, count, setCount}) => {
+  
 
+  const sumar = (e) => {
+    count < max && setCount (count + 1)
+  };
+
+  const restar = () => {
+    count > min && setCount (count - 1)
+  };
+
+  /*
   const sumar = () => {
     if (count < stock) {
       setCount(count + 1);
@@ -21,12 +29,12 @@ const ItemCount = ({stock, nombre, precio, initial}) => {
       setCount(count - 1);
     }
   };
-
+  
   const onAdd = () => {
     console.log(
       `Se ha agregado con exito ${count} ${nombre} con un valor de $${precio}`
     );
-  };
+  };*/
 
   return (
     <>
@@ -39,14 +47,19 @@ const ItemCount = ({stock, nombre, precio, initial}) => {
           <FontAwesomeIcon icon={faPlusCircle}></FontAwesomeIcon>
         </Button>
       </div>
-      <div className="botonAgregar">
-        <button className="btn11" onClick={onAdd}>
-          <FontAwesomeIcon icon={faCartPlus}></FontAwesomeIcon> Agregar al
-          carrito
-        </button>
-      </div>
+      
     </>
   );
 };
 
 export default ItemCount;
+
+
+/* 
+<div className="botonAgregar">
+        <button className="btn11" onClick={onAdd}>
+          <FontAwesomeIcon icon={faCartPlus}></FontAwesomeIcon> Agregar al
+          carrito
+        </button>
+      </div>
+*/

@@ -50,7 +50,7 @@ const ItemDetailContainer = (props) => {
   return (
     <div>
       <h1>{props.detalles}</h1>
-      <ItemDetail detail={deItems} />
+      <ItemDetail {...deItems} />
     </div>
   );
 };
