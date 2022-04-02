@@ -65,3 +65,21 @@ function ItemDetail({ id, nombre, linea, precio, stock, img }) {
 }
 
 export default ItemDetail;
+
+/*
+{isInCart(id) ? 
+          <Link to="/cart">
+            <button className="btn11">Finalizar compra</button>
+          </Link>
+         : 
+          <>
+            <ItemCount max={stock} count={cant} setCount={setCant} />
+            <div className="botonAgregar">
+              <button className="btn11" onClick={onAdd}>
+                <FontAwesomeIcon icon={faCartPlus}></FontAwesomeIcon> Agregar al
+                carrito
+              </button>
+            </div>
+          </>
+        }
+*/

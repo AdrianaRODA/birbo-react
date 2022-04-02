@@ -1,17 +1,26 @@
-import React from 'react'
-import { Button } from 'react-bootstrap'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
+import React from "react";
+import { Button } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+
+import { CartContext } from "./CartContext";
+import { useContext } from "react";
+import { Link } from "react-router-dom";
 
 const CartWidget = () => {
-    return (
-        <div>
-            <Button variant="primary" id="botonCarrito" data-bs-toggle="modal" data-bs-target="#modal-carrito">
-                <FontAwesomeIcon icon={faCartShopping}></FontAwesomeIcon>
-                <span id="contadorCarrito">0</span>
-            </Button>
-        </div>
-    )
-}
+  const { cantCart } = useContext(CartContext);
 
-export default CartWidget
+  return (
+    <Link to="/cart">
+      <Button
+        variant="primary"
+        id="botonCarrito"
+      >
+        <FontAwesomeIcon icon={faCartShopping}></FontAwesomeIcon>
+        <span id="contadorCarrito">{cantCart()}</span>
+      </Button>
+    </Link>
+  );
+};
+
+export default CartWidget;

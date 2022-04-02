@@ -1,35 +1,26 @@
 import "./App.css";
-import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import ItemListContainer from "./components/ItemListContainer";
 import NavBar from "./components/NavBar";
-import { CartContext } from "./components/CartContext";
+import Cart from "./components/Cart"
+
+import { CartProvider } from "./components/CartContext";
 
 function App() {
-
-  const [cart, setCart] = useState([])
-
-  const addCart = (item) => {
-    setCart ([...cart, item])
-  }
-
-  const isInCart = (id) => {
-    return cart.some((prod) => prod.id === id)
-  }
-
   return (
-    <CartContext.Provider value={{cart, addCart, isInCart}}>
+    <CartProvider>
       <BrowserRouter>
         <NavBar />
         <Routes>
           <Route path="/" element={<ItemListContainer />} />
           <Route path="/productos/:category" element={<ItemListContainer />} />
           <Route path="/item/:itemId" element={<ItemDetailContainer />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
       </BrowserRouter>
-    </CartContext.Provider>
+    </CartProvider>
   );
 }
 
