@@ -17,25 +17,6 @@ const ItemCount = ({max, min= 1, count, setCount}) => {
     count > min && setCount (count - 1)
   };
 
-  /*
-  const sumar = () => {
-    if (count < stock) {
-      setCount(count + 1);
-    }
-  };
-
-  const restar = () => {
-    if (count > 1) {
-      setCount(count - 1);
-    }
-  };
-  
-  const onAdd = () => {
-    console.log(
-      `Se ha agregado con exito ${count} ${nombre} con un valor de $${precio}`
-    );
-  };*/
-
   return (
     <>
       <div className="contador">
@@ -53,13 +34,3 @@ const ItemCount = ({max, min= 1, count, setCount}) => {
 };
 
 export default ItemCount;
-
-
-/* 
-<div className="botonAgregar">
-        <button className="btn11" onClick={onAdd}>
-          <FontAwesomeIcon icon={faCartPlus}></FontAwesomeIcon> Agregar al
-          carrito
-        </button>
-      </div>
-*/

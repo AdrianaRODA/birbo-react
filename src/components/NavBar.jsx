@@ -36,4 +36,3 @@ const NavBar = () => {
 
 export default NavBar;
 
-///productos/:category

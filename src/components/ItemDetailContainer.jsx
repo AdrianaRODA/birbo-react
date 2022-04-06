@@ -1,58 +1,48 @@
 import React, { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
+import { db } from "../firebase/config";
+import { doc, getDoc } from "firebase/firestore";
 
 const ItemDetailContainer = (props) => {
   const { itemId } = useParams();
-  console.log(itemId)
+  console.log(itemId);
 
   const [deItems, setDeItems] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    const imprimirProductos = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve([
-          {
-            id: 1,
-            stock: 7,
-            linea: "friends",
-            nombre: "Libreta -Pink collage-",
-            precio: 200,
-            img: "https://i.ibb.co/26VQnc2/image.jpg",
-          },
-          {
-            id: 2,
-            stock: 6,
-            linea: "lux",
-            nombre: "Journal -Estampa-",
-            precio: 400,
-            img: "https://i.ibb.co/c35SpCX/6.jpg",
-          },
-          {
-            id: 3,
-            stock: 3,
-            linea: "friends",
-            nombre: "Libreta -Tropical-",
-            precio: 200,
-            img: "https://i.ibb.co/BK1kDFn/3.jpg",
-          },
-        ]);
-      }, 3000);
-    });
+    setLoading(true);
 
-    imprimirProductos.then((res) => {
-      setDeItems(res.find((prod) => prod.id === Number(itemId)));
-    });
+    const docRef = doc(db, "productos", itemId);
+
+    getDoc(docRef)
+      .then((doc) => {
+        setDeItems({
+          id: doc.id,
+          ...doc.data(),
+        });
+      })
+
+      .finally(() => {
+        setLoading(false);
+      });
   }, [itemId]);
 
-  
-
   return (
-    <div>
-      <h1>{props.detalles}</h1>
-      <ItemDetail {...deItems} />
-    </div>
+    <>
+      {loading ? (
+        <h2>Cargando...</h2>
+      ) : (
+        <div>
+          <h1>{props.detalles}</h1>
+          <ItemDetail {...deItems} />
+        </div>
+      )}
+    </>
   );
 };
 
 export default ItemDetailContainer;
+
+

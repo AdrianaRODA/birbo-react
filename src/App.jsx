@@ -26,5 +26,3 @@ function App() {
 
 export default App;
 
-/*<ItemListContainer bienvenida="Hola bienvenido a Birbo Birbs y Journals" />
-  <ItemDetailContainer detalles="Detalles del producto" />*/

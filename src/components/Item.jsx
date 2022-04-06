@@ -2,12 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
+import { faEye } from "@fortawesome/free-solid-svg-icons";
 
 function Item({ id, linea, nombre, precio, img }) {
-  const onAdd = () => {
-    console.log("Se ha agregado al carrito");
-  };
   return (
     <div className="commerce">
       <div className="box-container">
@@ -23,12 +20,13 @@ function Item({ id, linea, nombre, precio, img }) {
             <h4>${precio} mxn </h4>
             <h4>{linea}</h4>
 
-            <div className="botonAgregar">
-              <button className="btn11" onClick={onAdd}>
-                <FontAwesomeIcon icon={faCartPlus}></FontAwesomeIcon> Agregar al
-                carrito
-              </button>
-            </div>
+            <Link to={`/item/${id}`}>
+              <div className="botonAgregar">
+                <button className="btn11">
+                  <FontAwesomeIcon icon={faEye}></FontAwesomeIcon> Ver mas
+                </button>
+              </div>
+            </Link>
           </div>
         </div>
       </div>
