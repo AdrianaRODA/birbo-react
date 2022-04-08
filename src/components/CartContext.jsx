@@ -15,7 +15,6 @@ export const CartProvider = ({ children }) => {
     return cart.some((prod) => prod.id === id);
   };
 
-  //quantityCart
   const cantCart = () => {
     return cart.reduce((acc, prod) => acc + prod.cant, 0);
   };

@@ -13,7 +13,7 @@ const BannerCarrusel = () => {
             alt="First slide"
           />
           <Carousel.Caption>
-            <h3>¡EL MEJOR FIN A LLEGADO!</h3>
+            <h2>¡EL MEJOR FIN A LLEGADO!</h2>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -24,8 +24,11 @@ const BannerCarrusel = () => {
           />
 
           <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h3>Libretas hechas con el corazón ❤️</h3>
+            <p>Hechas total y cuidadosamente con nuestras manos, 100% artesanales.</p>
+            <Link to="/">
+            <button className="botonBanner">Conoce nuestras presentaciones</button>
+            </Link>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -36,10 +39,13 @@ const BannerCarrusel = () => {
           />
 
           <Carousel.Caption>
-            <h3>Third slide label</h3>
+            <h3>Para todos los estilos</h3>
             <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+            Selecciona entre todos las variedades, el que mejor se adapte a ti :)
             </p>
+            <Link to="/">
+            <button className="botonBanner">¡Quiero verlos!</button>
+            </Link>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
@@ -49,47 +55,3 @@ const BannerCarrusel = () => {
 
 export default BannerCarrusel;
 
-/*
-<Carousel >
-        <Carousel.Item >
-          <img
-            className="d-block w-100"
-            src="https://i.ibb.co/dfXDwJg/Hotsale-Banner-Birbo.png"
-            alt="First slide"
-          />
-          <Carousel.Caption >
-            <h3>¡EL MEJOR FIN A LLEGADO!</h3>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item >
-          <img
-            className="d-block w-100"
-            src="https://i.ibb.co/7SqGM96/book3.jpg"
-            alt="Second slide"
-          />
-      
-          <Carousel.Caption >
-            <h3>Libretas hechas con el corazón ❤️</h3>
-            <p>Hechas total y cuidadosamente con nuestras manos, 100% artesanales.</p>
-            <Link>
-            <button className="botonBanner">Conoce nuestras presentaciones</button>
-            </Link>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item >
-          <img
-            className="d-block w-100"
-            src="https://i.ibb.co/hMx4NZN/fondo4.jpg"
-            alt="Third slide"
-          />
-      
-          <Carousel.Caption >
-            <h3>Para todos los estilos</h3>
-            <p>Selecciona entre todos las variedades, el que mejor se adapte a ti :)</p>
-            <Link>
-            <button className="botonBanner">¡Quiero verlos!</button>
-            </Link>
-          </Carousel.Caption>
-        </Carousel.Item>
-      </Carousel>
-*/
