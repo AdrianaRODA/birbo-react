@@ -3,6 +3,8 @@ import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
 import { db } from "../firebase/config";
 import { collection, getDocs, query, where } from "firebase/firestore";
+import BannerCarrusel from "./carruselBanner/BannerCarrusel";
+
 
 const ItemListContainer = (props) => {
   const { category } = useParams();
@@ -15,7 +17,9 @@ const ItemListContainer = (props) => {
     setLoading(true);
 
     const productosRef = collection(db, "productos");
-    const q = category ? query(productosRef, where("linea", "==", category)) : productosRef
+    const q = category
+      ? query(productosRef, where("linea", "==", category))
+      : productosRef;
 
     getDocs(q)
       .then((resp) => {
@@ -40,8 +44,9 @@ const ItemListContainer = (props) => {
         <h2>Cargando...</h2>
       ) : (
         <div>
-          <h1>{props.bienvenida}</h1>
-          <ItemList lista={products} />
+          <BannerCarrusel/>
+          <h1>Conoce las diferentes lineas de libretas</h1>
+            <ItemList lista={products} />
         </div>
       )}
     </>
@@ -49,5 +54,3 @@ const ItemListContainer = (props) => {
 };
 
 export default ItemListContainer;
-
-

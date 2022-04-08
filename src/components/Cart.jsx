@@ -13,14 +13,14 @@ const Cart = () => {
   return (
     <>
       {cart.length === 0 ? (
-        <div>
+        <div className="pageContainer">
           <h2>Tu carrito se encuentra vacio</h2>
           <Link to="/">
             <button className="btn11">Agregar productos</button>
           </Link>
         </div>
       ) : (
-        <div>
+        <div className="pageContainer">
           <h2>Mi carrito</h2>
           <hr />
 

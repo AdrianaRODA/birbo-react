@@ -6,7 +6,7 @@ import { faEye } from "@fortawesome/free-solid-svg-icons";
 
 function Item({ id, linea, nombre, precio, img }) {
   return (
-    <div className="commerce">
+    //<div className="commerce">
       <div className="box-container">
         <div className="box">
           <div className="image">
@@ -30,7 +30,7 @@ function Item({ id, linea, nombre, precio, img }) {
           </div>
         </div>
       </div>
-    </div>
+    //</div>
   );
 }
 

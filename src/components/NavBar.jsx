@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const NavBar = () => {
   return (
     <div>
-      <Navbar bg="dark" expand="lg" variant="dark">
+      <Navbar fixed="top" bg="dark" expand="lg" variant="dark">
         <Container>
           <Navbar.Brand href="/">
           <img
