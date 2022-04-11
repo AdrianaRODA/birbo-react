@@ -30,13 +30,9 @@ function ItemDetail({ id, nombre, stock, precio, linea, img }) {
 
   return (
     <div className="detailsBox">
-      <div className="commerce">
-        <div className="box-container">
-          <div className="box">
-            <div className="image">
-              <img src={img} alt={id} />
-            </div>
-          </div>
+      <div className="boxImg">
+        <div className="detailImgBox">
+          <img src={img} alt={id} />
         </div>
       </div>
 

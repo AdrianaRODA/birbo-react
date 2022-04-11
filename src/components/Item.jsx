@@ -7,7 +7,7 @@ import { faEye } from "@fortawesome/free-solid-svg-icons";
 function Item({ id, linea, nombre, precio, img }) {
   return (
     //<div className="commerce">
-      <div className="box-container">
+      <div className="box-container" >
         <div className="box">
           <div className="image">
             <Link to={`/item/${id}`}>

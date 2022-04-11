@@ -9,18 +9,17 @@ h1 {
 }
 
 /*FOOTER*/
-.phantom{
-  display: block;
-  padding: 8rem 0 0 0;
-  height: 100%;
-  width: 100%;
-}
 .footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 2rem;
   background-color: black;
+  offset-block-end: auto;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 .footer .modal-title {
   color: black;
@@ -116,8 +115,7 @@ h1 {
 .carousel-caption h2 {
   color: white;
   font-size: 3rem;
-  font-weight:bold;
-  
+  font-weight: bold;
 }
 
 .carousel-caption p {
@@ -288,16 +286,141 @@ h1 {
 }
 
 .detailsBox {
+  height: 100%;
+  width: 100%;
   margin: 4rem 0;
   display: inline-flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+.detailsBox .detailImgBox {
+  margin: 1rem 4rem;
+  width: 35rem;
+  padding: 0;
+  text-align: center;
+  background: #f0f0f0;
+}
+.detailsBox .detailImgBox img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
+
 .detailsBox .details {
-  margin: auto;
+  margin: 1rem 0;
+  align-content: flex-start;
+}
+@media only screen and (max-width: 768px) {
+  .detailsBox {
+    flex-direction: column;
+    align-items: center;
+    align-content: space-around;
+    justify-content: flex-start;
+  }
+  .detailsBox .detailImgBox{
+    margin: 0;
+    width: 100%;
+  }
+
+  
+  .detailsBox .details {
+    margin: 4rem;
+    justify-content: center;
+  }
+}
+
+#nosotros {
+  background-color: black;
+  padding: 5% 0;
+}
+#nosotros div {
+  background-image: url(https://i.ibb.co/7nzqJkd/agap.jpg);
+  background-size: cover;
+}
+#nosotros div div {
+  background-image: none;
+  background-color: black;
+  text-align: center;
+  margin: 0 25%;
+  padding: 4rem 0;
+}
+#nosotros div div h2 {
+  color: #ff6666;
+}
+#nosotros div div h2 span {
+  display: block;
+}
+#nosotros div div p {
+  color: white;
+  text-align: center;
+  margin: 1rem;
+}
+#nosotros div div p span {
+  display: block;
+  color: white;
+  font-weight: 700;
+  font-size: 30px;
+}
+@media only screen and (max-width: 768px) {
+  #nosotros div div {
+    margin: 0 10%;
+  }
+}
+
+/* Section 5 CONTACTO MAPA */
+.phantom{
+  display: block;
+  padding-bottom: 3rem;
+  height: 100%;
+  width: 100%;
+}
+
+#contacto {
+  background-color: #62c9c3;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+#contacto h2 {
+  color: white;
+}
+#contacto h3 {
+  color: #1a292b;
+}
+@media only screen and (max-width: 1200px) {
+  #contacto {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  #contacto iframe {
+    width: 100%;
+    order: 2;
+  }
+}
+#contacto div {
+  margin: 2rem;
+  text-align: left;
+}
+#contacto div form {
+  font-weight: 500;
+}
+#contacto div form #nombre {
+  width: 100%;
+  border-radius: 1rem;
+  border: none;
+}
+#contacto div form textarea {
+  width: 100%;
+  border-radius: 1rem;
+  border: none;
 }
 
 /*CHECKOUT*/
-.imgCheckout  {
+.imgCheckout {
   height: 40vh;
   justify-content: center;
   align-items: center;
@@ -305,20 +428,19 @@ h1 {
 
 .imgCheckout img {
   height: 40vh;
-  
 }
 
-.graciasCompra h2{
+.graciasCompra h2 {
   color: #ff6666;
   font-size: 3rem;
   font-weight: bold;
 }
 
-.graciasCompra h3{
+.graciasCompra h3 {
   color: #1a292b;
   font-size: 2rem;
 }
 
-.graciasCompra p{
+.graciasCompra p {
   font-size: 1.5rem;
 }

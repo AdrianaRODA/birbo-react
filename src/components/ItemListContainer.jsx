@@ -4,6 +4,8 @@ import { useParams } from "react-router-dom";
 import { db } from "../firebase/config";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import BannerCarrusel from "./carruselBanner/BannerCarrusel";
+import Nosotros from "./info/Nosotros";
+import Contacto from "./info/Contacto";
 
 
 const ItemListContainer = (props) => {
@@ -47,6 +49,8 @@ const ItemListContainer = (props) => {
           <BannerCarrusel/>
           <h1>Conoce las diferentes lineas de libretas</h1>
             <ItemList lista={products} />
+          <Nosotros />
+          <Contacto />
         </div>
       )}
     </>

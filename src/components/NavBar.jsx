@@ -3,6 +3,7 @@ import { Navbar, Container, Nav } from "react-bootstrap";
 import CartWidget from "./CartWidget";
 import { Link } from "react-router-dom";
 
+
 const NavBar = () => {
   return (
     <div>
@@ -23,8 +24,8 @@ const NavBar = () => {
               <Nav.Link href="/">Inicio</Nav.Link>
               <Nav.Link as={Link} to="/productos/friends">BirboFriends</Nav.Link>
               <Nav.Link as={Link} to="/productos/lux">BirboLux</Nav.Link>
-              <Nav.Link href="/">Nosotros</Nav.Link>
-              <Nav.Link href="/">Contacto</Nav.Link>
+              <Nav.Link href="/#nosotros">Nosotros</Nav.Link>
+              <Nav.Link href="/#contacto">Contacto</Nav.Link>
             </Nav>
             <CartWidget />
           </Navbar.Collapse>
