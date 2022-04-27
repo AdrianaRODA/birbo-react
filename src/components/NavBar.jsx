@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const NavBar = () => {
   return (
     <div>
-      <Navbar fixed="top" bg="dark" expand="lg" variant="dark">
+      <Navbar sticky="top" bg="dark" expand="lg" variant="dark">
         <Container>
           <Navbar.Brand href="/">
           <img
@@ -24,8 +24,7 @@ const NavBar = () => {
               <Nav.Link href="/">Inicio</Nav.Link>
               <Nav.Link as={Link} to="/productos/friends">BirboFriends</Nav.Link>
               <Nav.Link as={Link} to="/productos/lux">BirboLux</Nav.Link>
-              <Nav.Link href="/#nosotros">Nosotros</Nav.Link>
-              <Nav.Link href="/#contacto">Contacto</Nav.Link>
+              <Nav.Link href="/contacto">Contacto</Nav.Link>
             </Nav>
             <CartWidget />
           </Navbar.Collapse>

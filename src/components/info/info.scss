@@ -1,0 +1,158 @@
+/*NOSOTROS*/
+
+#nosotros {
+  background-color: black;
+  padding: 5% 0;
+
+  @media only screen and (max-width: 768px) {
+    #nosotros div div {
+      margin: 0 10%;
+    }
+  }
+
+  div {
+    background-image: url(https://i.ibb.co/7nzqJkd/agap.jpg);
+    background-size: cover;
+
+    div {
+      background-image: none;
+      background-color: black;
+      text-align: center;
+      margin: 0 25%;
+      padding: 4rem 0;
+
+      h2 {
+        color: #ff6666;
+        span {
+          display: block;
+        }
+      }
+
+      p {
+        color: white;
+        text-align: center;
+        margin: 1rem;
+        span {
+          display: block;
+          color: white;
+          font-weight: 700;
+          font-size: 30px;
+        }
+      }
+    }
+  }
+}
+
+/*CONTACTO*/
+
+.phantom {
+  display: block;
+  padding-bottom: 3rem;
+  height: 100%;
+  width: 100%;
+}
+
+#contacto {
+  background-color: #62c9c3;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  height: 100%;
+
+  @media only screen and (max-width: 1200px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  h2 {
+    color: white;
+  }
+
+  h3 {
+    color: #1a292b;
+  }
+
+  iframe {
+    @media only screen and (max-width: 1200px) {
+      width: 100%;
+      order: 2;
+    }
+  }
+
+  div {
+    margin: 2rem;
+    text-align: left;
+    width: 40%;
+
+    @media only screen and (max-width: 1200px) {
+      width: auto;
+    }
+
+    form {
+      font-weight: 500;
+      #nombre {
+        width: 100%;
+        border-radius: 1rem;
+        border: none;
+      }
+      textarea {
+        width: 100%;
+        border-radius: 1rem;
+        border: none;
+      }
+    }
+  }
+}
+
+.contacto {
+  background-color: $green;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  height: 82vh;
+
+  @media only screen and (max-width: 1200px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  h2 {
+    color: white;
+  }
+
+  h3 {
+    color: $blue;
+  }
+
+  iframe {
+    @media only screen and (max-width: 1200px) {
+      width: 100%;
+      order: 2;
+    }
+  }
+
+  div {
+    margin: 2rem;
+    text-align: left;
+    width: 50%;
+
+    @media only screen and (max-width: 1200px) {
+      width: auto;
+    }
+
+    form {
+      color: white;
+      font-weight: 500;
+      #nombre {
+        width: 100%;
+        border-radius: 1rem;
+        border: none;
+      }
+      textarea {
+        width: 100%;
+        border-radius: 1rem;
+        border: none;
+      }
+    }
+  }
+}

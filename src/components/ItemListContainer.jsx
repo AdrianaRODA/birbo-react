@@ -5,8 +5,9 @@ import { db } from "../firebase/config";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import BannerCarrusel from "./carruselBanner/BannerCarrusel";
 import Nosotros from "./info/Nosotros";
-import Contacto from "./info/Contacto";
-
+//import Contacto from "./info/Contacto";
+import { Link } from "react-router-dom";
+import ContactoLanding from "./info/ContactoLanding";
 
 const ItemListContainer = (props) => {
   const { category } = useParams();
@@ -46,11 +47,39 @@ const ItemListContainer = (props) => {
         <h2>Cargando...</h2>
       ) : (
         <div>
-          <BannerCarrusel/>
-          <h1>Conoce las diferentes lineas de libretas</h1>
-            <ItemList lista={products} />
+          <BannerCarrusel />
+          <section class="sectionDos">
+
+      <span>Planners Atemporales</span>
+      <span>Cuadernos únicos</span>
+      <span>100% artesanales y hechos a mano</span>
+      <span>Totalmente personalizables</span>
+
+    </section>
+          <section id="lineas">
+            <h1 id="heading">✨Conoce las diferentes lineas de libretas✨</h1>
+            <div>
+              <div className="parent">
+                <div className="child bg1">
+                  <Link to="/productos/friends">
+                    <button className="botonBanner">BirboFriends</button>
+                  </Link>
+                </div>
+              </div>
+              <div className="parent">
+                <div className="child bg2">
+                  <Link to="/productos/lux">
+                    <button className="botonBanner">BirboLux</button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <ItemList lista={products} />
+
           <Nosotros />
-          <Contacto />
+          <ContactoLanding />
         </div>
       )}
     </>

@@ -3,6 +3,8 @@
 <h3 align="center">A learner in frontend developent from Mexico</h3>
 
 - 🔭 I’m currently working on **Birbo Birbs&Journals**
+<h3 align="left">About:</h3>
+<p>Birbo es un proyecto de una tienda en linea de libretas artesanales. Se pueden ver dos de las lineas de producto y el proceso de compra como lo es visualizacion de detalles, seleccion de cantidad, agregar al carrito y proceder al proceso de cheackout de los productos seleccionados. Proyecto realizado en REACT, con ayuda de diferentes librerias.</p>
 
 - 🌱 I’m currently learning **front-end, UX design, wireframing**
 

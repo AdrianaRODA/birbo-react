@@ -7,6 +7,22 @@ h1 {
 .pageContainer {
   margin: 6rem 2rem;
 }
+/* Carrousel 1*/
+.aws-btn {
+  --slider-height-percentage: 60%;
+  --slider-transition-duration: 770ms;
+  --organic-arrow-thickness: 4px;
+  --organic-arrow-border-radius: 0px;
+  --organic-arrow-height: 40px;
+  --organic-arrow-color: #ffffff;
+  --control-button-width: 10%;
+  --control-button-height: 25%;
+  --control-button-background: transparent;
+  --control-bullet-color: #ff4242;
+  --control-bullet-active-color: #000000;
+  --loader-bar-color: #61ffca;
+  --loader-bar-height: 6px;
+}
 
 /*FOOTER*/
 .footer {
@@ -307,7 +323,6 @@ h1 {
   object-position: center;
 }
 
-
 .detailsBox .details {
   margin: 1rem 0;
   align-content: flex-start;
@@ -319,12 +334,11 @@ h1 {
     align-content: space-around;
     justify-content: flex-start;
   }
-  .detailsBox .detailImgBox{
+  .detailsBox .detailImgBox {
     margin: 0;
     width: 100%;
   }
 
-  
   .detailsBox .details {
     margin: 4rem;
     justify-content: center;
@@ -370,7 +384,7 @@ h1 {
 }
 
 /* Section 5 CONTACTO MAPA */
-.phantom{
+.phantom {
   display: block;
   padding-bottom: 3rem;
   height: 100%;

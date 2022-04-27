@@ -1,57 +1,71 @@
 import React from "react";
-import { Carousel } from "react-bootstrap";
+
+//import { Carousel } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, EffectFade } from "swiper";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/effect-fade";
+
+/*import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+import "swiper/css/controller"*/
 
 const BannerCarrusel = () => {
   return (
-    <div>
-      <Carousel>
-        <Carousel.Item>
+    <div className="swipeContainer">
+      <Swiper
+        modules={[Navigation, EffectFade]}
+        navigation
+        effect
+        speed={800}
+        slidesPerView={1}
+        loop
+        className="mySwiper"
+      >
+        <SwiperSlide className="swipSlide">
           <img
-            className="d-block w-100"
             src="https://i.ibb.co/dfXDwJg/Hotsale-Banner-Birbo.png"
-            alt="First slide"
+            alt="Hotsale"
           />
-          <Carousel.Caption>
+          <div className="slideText">
             <h2>¡EL MEJOR FIN A LLEGADO!</h2>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="https://i.ibb.co/7SqGM96/book3.jpg"
-            alt="Second slide"
-          />
-
-          <Carousel.Caption>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide className="swipSlideBG">
+          <img src="https://i.ibb.co/7SqGM96/book3.jpg" alt="Estilos" />
+          <div className="slideText">
             <h3>Libretas hechas con el corazón ❤️</h3>
-            <p>Hechas total y cuidadosamente con nuestras manos, 100% artesanales.</p>
-            <Link to="/">
-            <button className="botonBanner">Conoce nuestras presentaciones</button>
-            </Link>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="https://i.ibb.co/hMx4NZN/fondo4.jpg"
-            alt="Third slide"
-          />
-
-          <Carousel.Caption>
-            <h3>Para todos los estilos</h3>
             <p>
-            Selecciona entre todos las variedades, el que mejor se adapte a ti :)
+              Hechas total y cuidadosamente con nuestras manos, 100%
+              artesanales.
             </p>
-            <Link to="/">
-            <button className="botonBanner">¡Quiero verlos!</button>
+            <Link to="#lineas">
+              <button className="botonBanner">
+                Conoce nuestras presentaciones
+              </button>
             </Link>
-          </Carousel.Caption>
-        </Carousel.Item>
-      </Carousel>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide className="swipSlideBG">
+          <img src="https://i.ibb.co/hMx4NZN/fondo4.jpg" alt="tres" />
+          <div className="slideText">
+            <h3>Para todos los estilos 🕶️</h3>
+            <p>
+              Selecciona entre todos las variedades, el que mejor se adapte a ti
+              :)
+            </p>
+            <Link to="#lineas">
+              <button className="botonBanner">¡Quiero verlos!</button>
+            </Link>
+          </div>
+        </SwiperSlide>
+      </Swiper>
     </div>
+    
   );
 };
 
 export default BannerCarrusel;
-
